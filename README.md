@@ -96,6 +96,4 @@ Use Postman or any REST client to test the APIs by sending HTTP requests to the 
 - Implement user authentication and authorization.
 - Add support for cloud vendor categories.
 
-## Author
-Developed by Shiva Vinay
 
