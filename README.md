@@ -59,7 +59,7 @@ The application will be available at `http://localhost:8080`.
 ### Endpoints
 | HTTP Method | Endpoint         | Description                       |
 |-------------|------------------|-----------------------------------|
-| GET         | `/`              | Retrieve all vendors             |
+| GET         | `/all`           | Retrieve all vendors             |
 | GET         | `/{vendorId}`    | Retrieve a single vendor by ID   |
 | POST        | `/`              | Add a new vendor                 |
 | PUT         | `/{vendorId}`    | Update an existing vendor        |
