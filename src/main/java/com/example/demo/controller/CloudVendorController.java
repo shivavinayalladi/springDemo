@@ -1,11 +1,13 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.CloudVendor;
+import com.example.demo.response.ResponseHandler;
 import com.example.demo.service.CloudVendorService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/vendor")
@@ -19,8 +21,8 @@ public class CloudVendorController {
 
 //    single vendor
     @GetMapping("{vendorId}")
-    public Optional<CloudVendor> getVendorDetails(@PathVariable("vendorId") int vendorId) {
-        return cloudVendorService.getCloudVendor(vendorId);
+    public ResponseEntity<Object> getVendorDetails(@PathVariable("vendorId") int vendorId) {
+        return ResponseHandler.customResponseBuilder("Vendor Details of " + vendorId + " are given as", HttpStatus.OK, cloudVendorService.getCloudVendor(vendorId));
     }
 
 //    all vendors
@@ -43,5 +45,15 @@ public class CloudVendorController {
     @DeleteMapping("{vendorId}")
     public String deleteVendor(@PathVariable("vendorId") int vendorId) {
         return cloudVendorService.deleteCloudVendor(vendorId);
+    }
+
+    @GetMapping("/byname")
+    public List<CloudVendor> getVendorByName(@RequestParam String name) {
+        return cloudVendorService.getVendorByName(name);
+    }
+
+    @GetMapping("/byaddress")
+    public List<CloudVendor> getVendorByAddress(@RequestParam String address) {
+        return cloudVendorService.getVendorByAddress(address);
     }
 }
