@@ -8,16 +8,16 @@ public class CloudVendor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int vendorId;
+    private Long vendorId;
     private String vendorName;
     private String vendorAddress;
     private String vendorPhoneNumber;
 
-    public int getVendorId() {
+    public Long getVendorId() {
         return vendorId;
     }
 
-    public void setVendorId(int vendorId) {
+    public void setVendorId(Long vendorId) {
         this.vendorId = vendorId;
     }
 
@@ -50,7 +50,7 @@ public class CloudVendor {
 
     }
 
-    public CloudVendor(int vendorId, String vendorName, String vendorAddress, String vendorPhoneNumber) {
+    public CloudVendor(Long vendorId, String vendorName, String vendorAddress, String vendorPhoneNumber) {
         super();
         this.vendorId = vendorId;
         this.vendorName = vendorName;
